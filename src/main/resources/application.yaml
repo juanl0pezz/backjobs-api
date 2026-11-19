@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: jobs
-  graphql:
-    graphiql:
-      # Activa o desactiva la interfaz gráfica
-      enabled: true
-      #ruta de la interfaz gráfica
-      path: /graphiql
