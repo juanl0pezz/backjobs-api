@@ -1,0 +1,19 @@
+package com.uap.proiv.jobs.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.graphql.server.webmvc.GraphQlHttpHandler;
+import org.springframework.web.servlet.function.RouterFunction;
+import org.springframework.web.servlet.function.RouterFunctions;
+import org.springframework.web.servlet.function.ServerResponse;
+
+@Configuration
+public class GraphQlConfig {
+
+    @Bean
+    public RouterFunction<ServerResponse> graphQlCustomEndpoint(GraphQlHttpHandler graphQlHandler) {
+        return RouterFunctions.route()
+                .POST("/test", graphQlHandler::handleRequest)
+                .build();
+    }
+}
